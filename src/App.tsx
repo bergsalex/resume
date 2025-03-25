@@ -14,14 +14,13 @@ import {
   Briefcase,
   GraduationCap,
   BookOpen,
-  Award,
 } from 'lucide-react';
 import { Card, CardHeader, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { useCV } from './contexts/CVContext';
-import { formatDate, processEmphasis, processMarkdownLinks } from './services/cvService';
+import { formatDate, processEmphasis } from './services/cvService';
 import { ProjectCard } from '@/components/ProjectCard';
 import { ProjectsModal } from '@/components/ProjectsModal';
 
