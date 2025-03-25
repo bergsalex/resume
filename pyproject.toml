@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "resume"
+version = "0.1.0"
+description = ""
+authors = ["Alexander Berger <alexander.berger@jax.org>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+rendercv = {extras = ["full"], version = "^2.0"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

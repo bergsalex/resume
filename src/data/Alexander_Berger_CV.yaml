@@ -1,0 +1,204 @@
+cv:
+  name: Alexander Berger
+  email: bergs.alex@gmail.com
+  phone: tel:+1 (914) 393-7752
+  social_networks:
+    - network: LinkedIn
+      username: alexanderberger91
+    - network: GitHub
+      username: bergsalex
+  sections:
+    overview:
+      - Over a ***decade*** of experience in ***software engineering***, with expertise in ***API architecture*** and ***distributed systems*** using ***Python*** and ***TypeScript***.
+      - Passionate about building ***elegant*** software solutions that ***meet and exceed user needs***.
+      - Experienced in collaborating with colleagues ***across disciplines and domains***.
+      - Experienced in ***designing, leading, and implementing*** complex ***distributed systems*** powering scientific and ***developer focused solutions***.
+      - Extensive experience in building solutions on ***cloud infrastructure***, with specific expertise in ***GCP***.
+    technologies:
+      - label: Languages
+        details: 'Python, SQL, TypeSript/JavaScript, Bash.'
+      - label: Technologies
+        details: Kubernetes, Docker, Terraform, Skaffold, Helm, Git, PostgreSQL / PgVector, CloudSQL
+      - label: Frameworks
+        details: FastAPI, Click/Typer, SQLAlchemy, Flask, Angular
+      - label: Services
+        details: GCP, Bitbucket, Github, Temporal.io, Jira, Confluence
+      - label: 'Experience with'
+        details: React, Pytorch, Tensorflow, R, C/C++, Rust, Java, Cloud Run, Prometheus/Grafana, Redis
+    experience:
+      - company: The Jackson Laboratory
+        position: Senior Scientific Software Engineer
+        location: Bar Harbor, ME
+        start_date: 2022-08
+        end_date: present
+        highlights:
+          - Design and drive high-complexity projects, independently and in a team environment.
+          - Mentor & lead a team of engineers and independently lead collaborations.
+          - Independently drive collaborations and requirements gathering discussions.
+          - Identify publishable applications and lead or co-lead the respective publications.
+          - Design and implement team processes and procedures to improve operational effectiveness and efficiency.
+          - Participate in application architecture and design reviews. 
+          - All responsibilities of previous roles.
+      - company: The Jackson Laboratory
+        position: Scientific Software Engineer
+        location: Bar Harbor, ME
+        start_date: 2018-09
+        end_date: 2022-08
+        highlights:
+          - Design and drive low and medium complexity projects, independently and in a team environment.
+          - Participate in collaborations and requirements gathering discussions.
+          - Stay current with bioinformatics and genomics literature and associated technologies.
+          - All responsibilities of previous roles.
+      - company: The Jackson Laboratory
+        position: Associate Scientific Software Engineer
+        location: Bar Harbor, ME
+        start_date: 2016-01
+        end_date: 2018-09
+        highlights:
+          - Participate and contribute to software development projects.
+          - Participate in code reviews and design discussions.
+          - Contribute to internal documentation, courses and workshops.
+          - Contribute to publications.
+      - position: ''
+        company: Additional Experience Provided Below
+    'Core Skills':
+      - label: Software Engineering
+        details: 'Systems/API Architecture & Design, Cloud Infrastructure, Debugging & Root Cause Analysis'
+      - label: Technical Leadership
+        details: 'Team Leadership, Technical Communication, Product Development, Mentorship, Collaboration, Conflict Resolution, Stakeholder Management'
+    education:
+      - institution: The Roux Institute at Northeastern University
+        area: Computer Science
+        degree: MS
+        start_date: 2020-09
+        end_date: 2023-08
+        highlights:
+          - 'GPA: 3.8/4.0'
+          - '**Selected Coursework:** Algorithms, Software Engineering, Pattern Recognition & Computer Vision, Database Management, Programming Design Paradigms, Machine Learning w/ Small Data, Data Visualization'
+      - institution: New York City College of Technology
+        area: Applied Mathematics
+        degree: BS
+        start_date: 2014-09
+        end_date: 2016-12
+        highlights:
+          - 'GPA: 3.9/4.0'
+          - '**Selected Coursework:** Computational Statistics, Stochastic Processes, Numerical Methods, Calculus, Ordinary and Partial Differential Equations, Probability & Statistics, Linear Algebra, Mathematical Modeling, Data Structures & Algorithms'
+    projects:
+      - name: Genomic Data Repository and Analysis Platform
+        date: '[GeneWeaver GitHub](https://github.com/orgs/TheJacksonLaboratory/repositories?q=geneweaver)'
+        highlights:
+          - '**Impact:** Designed and implemented a transition path for the application from a monolithic architecture to a distributed architecture, and from on-premises infrastructure to cloud infrastructure. Leading to increased usage, scalability, engagement, and operational efficiency.'
+          - '**Tools Used:** Python, FastAPI, CloudSQL - PostgreSQL, Temporal, Bash, Docker, GKE - Kubernetes'
+          - Increased delivery from approximately twelve releases per year, to over 166 releases per year.
+          - Interviewed a diverse set of stakeholders to understand the current and future needs of the system, and to identify a workable development pathway.
+          - Lead a team of three engineers to implement the changes and deliver requirements on-time.
+          - Regularly meets with stakeholders, including the PI, data scientists, data curators, and collaborators to provide status updates and to gather feedback.
+      - name: Semantic & Association Search Service
+        highlights:
+          - '**Impact:** Developed a semantic and association search service for scientific data resources. Implemented hybrid vector/graph datamodel to support the semantic search service.'
+          - '**Tools Used:** Python, FastAPI, Temporal.io, CloudSQL - PostgreSQL with Pgvector, GKE - Kubernetes'
+          - Collaborated across domains to design and implement a semantic and association search service for scientific data resources.
+          - Implemented hybrid vector/graph datamodel to support the semantic search service.
+          - Utilizes open source LLMs to create document embeddings and to support the semantic search capabilities.
+      - name: Analysis Job API
+        highlights:
+          - '**Impact:** Developed an API to support the development of durable, user-centric analysis jobs for data resources and informatics platforms. Simplified the development and usage of analysis jobs by providing a standardized interface and a flexible execution model.'
+          - '**Tools Used:** Python, FastAPI, Temporal.io, CloudSQL - PostgreSQL, GKE - Kubernetes'
+          - Performed extensive stakeholder engagement to ensure the API meets the current and future needs of the users.
+          - Selected as the core pathfinder use-case for departmental UI Component Library, to be used across all data resources and informatics platforms.
+      - name: Kubernetes & Cloud Infrastructure
+        highlights:
+          - "**Impact:** Designed and implemented a Kubernetes cloud infrastructure to support The Jackson Laboratory's computational sciences and data resources and informatics platforms. Decreased cloud infrastructure costs, improved operational efficiency, and increased scalability and reliability of the infrastructure."
+          - '**Tools Used:** Terraform, Helm, Git, GitHub, Bitbucket, Google Cloud Platform'
+          - Infrastructure is comprised of more than 350vCPUs and 1.5TB of RAM, and runs an average of 220 workloads powering more than 140 services.
+          - Implemented processes and procedures to automate and standardize the rollout of infrastructure changes.
+          - Contribtued to incident response and post-mortem investigations.
+      - name: API Utility Library
+        highlights:
+          - '**Impact:** Developed a utility library to ease the development of standards compliant RESTful APIs. Implemented core ReSTful API Standards and best practices utilities to make it easy for new and existing APIs to be compliant.'
+          - '**Tools Used:** Python'
+          - Currently in use across multiple python applications, including new and legacy APIs.
+          - The foundation element for API standardization in the departmental UI Component Library initiative.
+      - name: Storage Abstraction Library
+        highlights:
+          - '**Impact:** Developed a storage abstraction library to support the development of data resources and informatics platforms in a consistent manner. Implemented a flexible, pluggable architecture to support various storage backends. Used as an abstraction for cloud native storage solutions, and as a migration path for legacy storage solutions.'
+          - '**Tools Used:** Python'
+          - Currently in use by all Python based data resources and informatics platforms in the department.
+          - In active use and development for over four years.
+      - name: Technical Knowledge Base
+        highlights:
+          - '**Impact:** Implemented a technical knowledgebase that supports and encourages knowledge sharing and collaboration across teams and domains.'
+          - '**Tools Used:** Python, MkDocs'
+    publications:
+      - title: 'AON: a service to augment Alliance Genome Resource data with additional species.'
+        authors:
+          - Sophie K Kearney
+          - '***Alexander Berger***'
+          - Erich Baker
+        doi: 10.1186/s13104-023-06577-8
+        date: 2023-10
+      - title: 'Mouse phenome database: curated data repository with interactive multi-population and multi-trait analyses.'
+        authors:
+          - Molly A. Bogue
+          - Robyn L Ball
+          - David O Walton
+          - Matthew H Dunn
+          - Georgi Kolishovski
+          - '***Alexander Berger***'
+          - et al.
+        doi: 10.1007/s00335-023-10014-3
+        date: 2023-12
+      - title: 'GenomeMUSter mouse genetic variation service enables multitrait, multipopulation data integration and analysis.'
+        authors:
+          - Robyn L Ball
+          - Molly A. Bogue
+          - Hongping Liang
+          - Anuj Srivastava
+          - David G Ashbrook
+          - Anna Lamoureux
+          - Matthew Gerring
+          - Alexander S Hatoum
+          - Matthew J Kim
+          - Hao He
+          - Jake Emerson
+          - '***Alexander Berger***'
+          - et al.
+        doi: 10.1101/gr.278157.123
+        date: 2024-02
+      - title: 'Curating gene sets: challenges and opportunities for integrative analysis.'
+        authors:
+          - Jason A. Bubier
+          - David P. Hill
+          - Gaurab Mukherjee
+          - Timothy Reynolds
+          - Erich J Baker
+          - '***Alexander Berger***'
+          - et al.
+        doi: 10.1093/database/baz036
+        date: 2019-01
+    'Additional Experience':
+      - company: The Jackson Laboratory
+        position: Software Engineering Intern
+        location: Bar Harbor, ME
+        start_date: 2014-06
+        end_date: 2016-01
+        highlights:
+          - Software engineering and development projects.
+          - Software quality assurance tasks and projects.
+      - company: Hudson Valley Digital 
+        position: Programming Associate
+        location: New York, NY
+        start_date: 2014-02
+        end_date: 2014-06
+        highlights:
+          - Planing, design, and implementation work for contract-based software engineering projects.
+      - company: Amkai LLC
+        position: Software Engineering Intern
+        location: New York, NY
+        start_date: 2013-06
+        end_date: 2013-09
+        highlights:
+          - Designed and implemented test plans and scripts for black box testing.
+          - Created software documentation and deployed a documentation wiki.
+  design:
+    theme: engineeringresumes 
