@@ -486,6 +486,8 @@ ${n.comment}`:n.comment}this.doc.range[2]=n.offset;break}default:this.errors.pus
     media:
       - title: 'Jackson Laboratory software engineer levels up his career at the Roux Institute'
         publisher: 'Northeastern University Roux Institute'
+        authors:
+          - 'The Roux Institute'
         date: '2023-05'
         url: 'https://roux.northeastern.edu/story/jackson-laboratory-software-engineer-levels-up-his-career-at-the-roux-institute/'
         description: 'Profile article about my educational journey at the Roux Institute and how it has impacted my career at The Jackson Laboratory.'
