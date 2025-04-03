@@ -286,7 +286,7 @@ ${n.comment}`:n.comment}this.doc.range[2]=n.offset;break}default:this.errors.pus
   phone: tel:+1 (914) 393-7752
   social_networks:
     - network: LinkedIn
-      username: alexanderberger91
+      username: alexberger91
     - network: GitHub
       username: bergsalex
   sections:
@@ -298,7 +298,7 @@ ${n.comment}`:n.comment}this.doc.range[2]=n.offset;break}default:this.errors.pus
       - Extensive experience in building solutions on ***cloud infrastructure***, with specific expertise in ***GCP***.
     technologies:
       - label: Languages
-        details: 'Python, SQL, TypeSript, JavaScript, Bash'
+        details: Python, SQL, TypeSript, JavaScript, Bash
       - label: Technologies
         details: Kubernetes, Docker, Terraform, Skaffold, Helm, Git, PostgreSQL / PgVector, CloudSQL
       - label: Frameworks
@@ -314,9 +314,9 @@ ${n.comment}`:n.comment}this.doc.range[2]=n.offset;break}default:this.errors.pus
         start_date: 2022-08
         end_date: present
         highlights:
-          - Design and drive high-complexity projects, independently and in a team environment.
+          - Design and drive high-complexity projects independently and in a team environment.
           - Mentor & lead a team of engineers and independently lead collaborations.
-          - Independently drive collaborations and requirements gathering discussions.
+          - Independently drive collaborations and requirements-gathering discussions.
           - Identify publishable applications and lead or co-lead the respective publications.
           - Design and implement team processes and procedures to improve operational effectiveness and efficiency.
           - Participate in application architecture and design reviews. 
@@ -327,11 +327,11 @@ ${n.comment}`:n.comment}this.doc.range[2]=n.offset;break}default:this.errors.pus
         start_date: 2018-09
         end_date: 2022-08
         highlights:
-          - Design and drive complex projects, independently and in a team environment.
-          - Participate in collaborations and requirements gathering discussions.
+          - Design and drive complex projects independently and in a team environment.
+          - Participate in and drive collaborations and requirements-gathering discussions.
           - Stay current with bioinformatics and genomics literature and associated technologies.
-          - Collaborate across disciplines and domains to identify, design and implement solutions.
-          - Work closely with Software Quality Assurance team to identify and resolve issues.
+          - Collaborate across disciplines and domains to identify, design, and implement solutions.
+          - Work closely with the Software Quality Assurance team to identify and resolve issues.
           - All responsibilities of previous roles.
       - company: The Jackson Laboratory
         position: Associate Scientific Software Engineer
@@ -341,7 +341,7 @@ ${n.comment}`:n.comment}this.doc.range[2]=n.offset;break}default:this.errors.pus
         highlights:
           - Participate and contribute to software development projects.
           - Participate in code reviews and design discussions.
-          - Contribute to internal documentation, courses, workshops, andpublications.
+          - Contribute to internal documentation, courses, workshops, and publications.
       - position: ''
         company: Additional Experience Provided Below
     'Core Skills':
@@ -370,43 +370,43 @@ ${n.comment}`:n.comment}this.doc.range[2]=n.offset;break}default:this.errors.pus
       - name: Genomic Data Repository and Analysis Platform
         date: '[GeneWeaver GitHub](https://github.com/orgs/TheJacksonLaboratory/repositories?q=geneweaver)'
         highlights:
-          - '**Impact:** Designed and implemented a transition path for the application from a monolithic architecture to a distributed architecture, and from on-premises infrastructure to cloud infrastructure. Leading to increased usage, scalability, engagement, and operational efficiency.'
+          - '**Impact:** Designed and implemented a transition path for the application from a monolithic architecture to a distributed architecture and from on-premises infrastructure to cloud infrastructure. Leading to increased usage, scalability, engagement, and operational efficiency.'
           - '**Tools Used:** Python, FastAPI, CloudSQL - PostgreSQL, Temporal, Bash, Docker, GKE - Kubernetes'
-          - Increased delivery from approximately twelve releases per year, to over 166 releases per year.
-          - Interviewed a diverse set of stakeholders to understand the current and future needs of the system, and to identify a workable development pathway.
-          - Lead a team of three engineers to implement the changes and deliver requirements on-time.
-          - Regularly meets with stakeholders, including the PI, data scientists, data curators, and collaborators to provide status updates and to gather feedback.
+          - Increased delivery from approximately twelve releases per year to over 166 releases per year.
+          - Interviewed a diverse set of stakeholders to understand the system's current and future needs and identify a workable development pathway.
+          - Led a team of three engineers to implement the changes and deliver requirements on time.
+          - Regularly meets with stakeholders, including the PI, data scientists, data curators, and collaborators, to provide status updates and to gather feedback.
       - name: Semantic & Association Search Service
         highlights:
-          - '**Impact:** Developed a semantic and association search service for scientific data resources. Implemented hybrid vector/graph datamodel to support the semantic search service.'
+          - '**Impact:** Developed a semantic and association search service for scientific data resources.'
           - '**Tools Used:** Python, FastAPI, Temporal.io, CloudSQL - PostgreSQL with Pgvector, GKE - Kubernetes'
           - Collaborated across domains to design and implement a semantic and association search service for scientific data resources.
-          - Implemented hybrid vector/graph datamodel to support the semantic search service.
-          - Utilizes open source LLMs to create document embeddings and to support the semantic search capabilities.
+          - Implemented a hybrid vector/graph data model to support the semantic search service.
+          - Utilizes open-source LLMs to create document embeddings and to support the semantic search capabilities.
       - name: Analysis Job API
         highlights:
           - '**Impact:** Developed an API to support the development of durable, user-centric analysis jobs for data resources and informatics platforms. Simplified the development and usage of analysis jobs by providing a standardized interface and a flexible execution model.'
           - '**Tools Used:** Python, FastAPI, Temporal.io, CloudSQL - PostgreSQL, GKE - Kubernetes'
           - Performed extensive stakeholder engagement to ensure the API meets the current and future needs of the users.
-          - Selected as the core pathfinder use-case for departmental UI Component Library, to be used across all data resources and informatics platforms.
+          - Selected as the core pathfinder use-case for the departmental UI Component Library, used across all data resources and informatics platforms.
       - name: Kubernetes & Cloud Infrastructure
         highlights:
-          - "**Impact:** Designed and implemented a Kubernetes cloud infrastructure to support The Jackson Laboratory's computational sciences and data resources and informatics platforms. Decreased cloud infrastructure costs, improved operational efficiency, and increased scalability and reliability of the infrastructure."
+          - "**Impact:** Designed and implemented the Kubernetes cloud infrastructure to support The Jackson Laboratory's computational sciences, data resources, and informatics platforms. Decreased cloud infrastructure costs, improved operational efficiency, and increased scalability and reliability of the infrastructure."
           - '**Tools Used:** Terraform, Helm, Git, GitHub, Bitbucket, Google Cloud Platform'
-          - Infrastructure is comprised of more than 350vCPUs and 1.5TB of RAM, and runs an average of 220 workloads powering more than 140 services.
+          - The infrastructure comprises more than 350 vCPUs and 1.5TB of RAM, and it runs an average of 220 workloads, powering more than 140 services.
           - Implemented processes and procedures to automate and standardize the rollout of infrastructure changes.
-          - Contribtued to incident response and post-mortem investigations.
+          - Contributed to incident response and post-mortem investigations.
       - name: API Utility Library
         highlights:
-          - '**Impact:** Developed a utility library to ease the development of standards compliant RESTful APIs. Implemented core ReSTful API Standards and best practices utilities to make it easy for new and existing APIs to be compliant.'
+          - '**Impact:** Developed a utility library to ease the development of standards-compliant RESTful APIs. Implemented core ReSTful API Standards and best practices utilities to make it easy for new and existing APIs to be compliant.'
           - '**Tools Used:** Python'
-          - Currently in use across multiple python applications, including new and legacy APIs.
+          - Currently used across multiple Python applications, including new and legacy APIs.
           - The foundation element for API standardization in the departmental UI Component Library initiative.
       - name: Storage Abstraction Library
         highlights:
-          - '**Impact:** Developed a storage abstraction library to support the development of data resources and informatics platforms in a consistent manner. Implemented a flexible, pluggable architecture to support various storage backends. Used as an abstraction for cloud native storage solutions, and as a migration path for legacy storage solutions.'
+          - '**Impact:** Developed a storage abstraction library to support the consistent development of data resources and informatics platforms. Implemented a flexible, pluggable architecture to support various storage backends. Used as an abstraction for cloud-native storage solutions and as a migration path for legacy storage solutions.'
           - '**Tools Used:** Python'
-          - Currently in use by all Python based data resources and informatics platforms in the department.
+          - Currently used by all Python-based data resources and informatics platforms in the department.
           - In active use and development for over four years.
       - name: Technical Knowledge Base
         highlights:
@@ -474,7 +474,7 @@ ${n.comment}`:n.comment}this.doc.range[2]=n.offset;break}default:this.errors.pus
         start_date: 2014-02
         end_date: 2014-06
         highlights:
-          - Planing, design, and implementation work for contract-based software engineering projects.
+          - Planned, designed, and implemented work for contract-based software engineering projects.
       - company: Amkai LLC
         position: Software Engineering Intern
         location: New York, NY
