@@ -1,6 +1,7 @@
 /**
  * Service for loading and parsing CV data from YAML
  */
+/* eslint-disable react-refresh/only-export-components */
 import { parse } from 'yaml';
 import React from 'react';
 import { CV } from '../types/cv';
@@ -27,16 +28,17 @@ export const parseCV = (yamlContent: string): CV => {
  * @param dateStr - Date string in YYYY-MM format or "present"
  * @returns Formatted date string
  */
+const MONTHS = [
+  'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+];
+
 export const formatDate = (dateStr: string): string => {
   if (dateStr === 'present') return 'Present';
   
   const [year, month] = dateStr.split('-');
-  const months = [
-    'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
-  ];
   
-  return `${months[parseInt(month) - 1]} ${year}`;
+  return `${MONTHS[parseInt(month) - 1]} ${year}`;
 };
 
 /**
