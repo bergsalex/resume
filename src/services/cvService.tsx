@@ -65,10 +65,12 @@ export const processMarkdownLinks = (text: string): { text: string, link?: strin
  * @param text - Text that may contain emphasis markers
  * @returns Text with emphasis markers processed for React rendering
  */
+const EMPHASIS_REGEX = /((?:\*\*\*)[^*]+(?:\*\*\*))/g;
+
 export const processEmphasis = (text: string): React.ReactNode => {
   if (!text) return null;
   
-  const parts = text.split(/((?:\*\*\*)[^*]+(?:\*\*\*))/g);
+  const parts = text.split(EMPHASIS_REGEX);
   
   return (
     <>
