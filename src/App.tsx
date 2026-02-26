@@ -24,6 +24,10 @@ import { formatDate, processEmphasis } from './services/cvService';
 import { ProjectCard } from '@/components/ProjectCard';
 import { ProjectsModal } from '@/components/ProjectsModal';
 
+// Regex constants to prevent recompilation on every render
+const BOLD_REGEX = /\*\*(.*?)\*\*/g;
+const TRIPLE_ASTERISK_REGEX = /\*\*\*(.*?)\*\*\*/g;
+
 const App = () => {
   const { cv, loading, error } = useCV();
   const [scrolled, setScrolled] = useState(false);
@@ -342,7 +346,7 @@ const App = () => {
                 <ul className="mt-2 space-y-1">
                   {edu.highlights.map((highlight, i) => (
                     <li key={i} className="text-gray-600 text-sm sm:text-base" 
-                        dangerouslySetInnerHTML={{ __html: highlight.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }}>
+                        dangerouslySetInnerHTML={{ __html: highlight.replace(BOLD_REGEX, '<strong>$1</strong>') }}>
                     </li>
                   ))}
                 </ul>
@@ -424,7 +428,7 @@ const App = () => {
                     {pub.authors.map((author, i) => {
                       // Check if the author name contains the CV owner's name
                       const isHighlighted = author.includes(cv.name) || author.includes('***');
-                      const cleanName = author.replace(/\*\*\*(.*?)\*\*\*/g, '$1');
+                      const cleanName = author.replace(TRIPLE_ASTERISK_REGEX, '$1');
                       
                       return (
                         <React.Fragment key={i}>
