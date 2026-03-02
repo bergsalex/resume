@@ -5,6 +5,9 @@ import { parse } from 'yaml';
 import React from 'react';
 import { CV } from '../types/cv';
 
+const LINK_REGEX = /\[([^\]]+)\]\(([^)]+)\)/;
+const EMPHASIS_REGEX = /((?:\*\*\*)[^*]+(?:\*\*\*))/g;
+
 /**
  * Loads CV data from a YAML file
  * 
@@ -46,8 +49,7 @@ export const formatDate = (dateStr: string): string => {
  * @returns Object with processed text and extracted links
  */
 export const processMarkdownLinks = (text: string): { text: string, link?: string } => {
-  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/;
-  const match = text.match(linkRegex);
+  const match = text.match(LINK_REGEX);
   
   if (match) {
     return {
@@ -68,7 +70,7 @@ export const processMarkdownLinks = (text: string): { text: string, link?: strin
 export const processEmphasis = (text: string): React.ReactNode => {
   if (!text) return null;
   
-  const parts = text.split(/((?:\*\*\*)[^*]+(?:\*\*\*))/g);
+  const parts = text.split(EMPHASIS_REGEX);
   
   return (
     <>

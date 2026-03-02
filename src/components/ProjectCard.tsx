@@ -6,6 +6,8 @@ import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { ProjectItem } from "@/types/cv";
 import { processMarkdownLinks } from "@/services/cvService";
 
+const BOLD_REGEX = /\*\*(.*?)\*\*/g;
+
 interface ProjectCardProps {
   project: ProjectItem;
   className?: string;
@@ -43,7 +45,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, className }) 
         <ul className="space-y-2">
           {project.highlights.map((highlight, i) => {
             // Handle markdown formatting in highlights
-            const highlightText = highlight.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            const highlightText = highlight.replace(BOLD_REGEX, '<strong>$1</strong>');
             
             return (
               <li key={i} className="text-gray-600 text-sm">
