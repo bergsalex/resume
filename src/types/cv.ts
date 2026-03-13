@@ -25,6 +25,7 @@ export interface EducationItem {
   institution: string;
   area: string;
   degree: string;
+  gpa?: string;
   start_date: string;
   end_date: string;
   highlights: string[];
@@ -39,26 +40,34 @@ export interface ProjectItem {
 export interface PublicationItem {
   title: string;
   authors: string[];
-  doi: string;
+  doi?: string;
+  date?: string;
+}
+
+export interface MediaItem {
+  title: string;
+  publisher: string;
+  authors: string[];
   date: string;
+  url: string;
+  description: string;
 }
 
 export interface CV {
   name: string;
+  location?: string;
   email: string;
+  website?: string;
   phone: string;
   social_networks: SocialNetwork[];
   sections: {
     overview: string[];
-    technologies: TechnologyItem[];
+    'Core Competencies': TechnologyItem[];
+    'Technical Leadership Highlights': string[];
     experience: ExperienceItem[];
-    'Core Skills': TechnologyItem[];
+    'Selected Projects': ProjectItem[];
     education: EducationItem[];
-    projects: ProjectItem[];
     publications: PublicationItem[];
-    'Additional Experience': ExperienceItem[];
+    media?: MediaItem[];
   };
-  design: {
-    theme: string;
-  };
-} 
+}

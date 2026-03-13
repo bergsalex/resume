@@ -4,7 +4,7 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { CV } from '../types/cv';
 import { parseCV } from '../services/cvService';
-import cvYaml from '../data/Alexander_Berger_CV.yaml?raw'; // You'll need to configure Vite for this
+import cvYaml from '../../cv.yaml?raw';
 
 interface CVContextType {
   cv: CV | null;
