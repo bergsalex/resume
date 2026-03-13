@@ -40,6 +40,8 @@ const App = () => {
   const [headerHeight, setHeaderHeight] = useState(340);
   const expandedHeight = useRef(340);
 
+  const initialHashHandled = useRef(false);
+
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 50;
@@ -47,8 +49,36 @@ const App = () => {
       setMobileMenuOpen(false);
     };
 
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const el = document.querySelector(hash);
+        if (el) {
+          // Collapse header first if needed
+          if (window.scrollY <= 50) window.scrollTo({ top: 51 });
+          requestAnimationFrame(() => {
+            const offset = headerRef.current?.getBoundingClientRect().height ?? 80;
+            const top = el.getBoundingClientRect().top + window.scrollY - offset - 16;
+            window.scrollTo({ top, behavior: 'smooth' });
+          });
+        }
+      }
+    };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('popstate', handleHashChange);
+
+    // Handle initial hash on page load
+    if (!initialHashHandled.current && window.location.hash) {
+      initialHashHandled.current = true;
+      // Delay to allow page to render
+      setTimeout(handleHashChange, 100);
+    }
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('popstate', handleHashChange);
+    };
   }, []);
 
   // Dynamically measure header height so the spacer always matches.
@@ -166,9 +196,12 @@ const App = () => {
     },
   ];
 
-  const scrollToSection = (href: string) => {
+  const scrollToSection = (href: string, smooth = true) => {
     const el = document.querySelector(href);
     if (!el) return;
+
+    // Update the URL hash without triggering a scroll
+    window.history.pushState(null, '', href);
 
     if (!scrolled) {
       // Force the header to collapse first so the spacer shrinks,
@@ -177,14 +210,15 @@ const App = () => {
       requestAnimationFrame(() => {
         const offset = headerRef.current?.getBoundingClientRect().height ?? 80;
         const top = el.getBoundingClientRect().top + window.scrollY - offset - 16;
-        window.scrollTo({ top, behavior: 'smooth' });
+        window.scrollTo({ top, behavior: smooth ? 'smooth' : 'auto' });
       });
     } else {
       const offset = headerRef.current?.getBoundingClientRect().height ?? 80;
       const top = el.getBoundingClientRect().top + window.scrollY - offset - 16;
-      window.scrollTo({ top, behavior: 'smooth' });
+      window.scrollTo({ top, behavior: smooth ? 'smooth' : 'auto' });
     }
   };
+
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -477,7 +511,7 @@ const App = () => {
             className="relative"
           >
             {/* Timeline spine */}
-            <div className="absolute left-4 sm:left-6 top-0 bottom-0 w-px bg-gradient-to-b from-indigo-300 via-indigo-200 to-transparent" />
+            <div className="absolute left-4 sm:left-[26px] top-0 bottom-0 w-px bg-gradient-to-b from-indigo-300 via-indigo-200 to-transparent" />
 
             {cv.sections.experience.filter(exp => exp.position).map((exp, index) => (
               <motion.div
@@ -486,7 +520,7 @@ const App = () => {
                 className="relative pl-12 sm:pl-16 pb-10 last:pb-0"
               >
                 {/* Timeline node */}
-                <div className={`absolute left-2 sm:left-4 top-2 w-4 h-4 sm:w-5 sm:h-5 rounded-full border-[3px] border-indigo-500 z-10 shadow-sm ${exp.end_date === 'present' ? 'bg-indigo-300' : 'bg-white'}`} />
+                <div className={`absolute left-2 sm:left-4 top-6 sm:top-10 w-4 h-4 sm:w-5 sm:h-5 rounded-full border-[3px] border-indigo-500 z-10 shadow-sm ${exp.end_date === 'present' ? 'bg-indigo-300' : 'bg-white'}`} />
 
                 <Card className="border-gray-100 hover:border-indigo-100 hover:shadow-md transition-all duration-300 overflow-hidden border-l-2 border-l-indigo-400/60">
                   <CardContent className="p-4 sm:p-6">
@@ -531,7 +565,7 @@ const App = () => {
       </div>
 
       {/* Education Section */}
-      <div className="w-full py-12 sm:py-16 lg:py-20">
+      <div id="education" className="w-full py-12 sm:py-16 lg:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0 }}
@@ -769,7 +803,7 @@ const App = () => {
 
       {/* Media Section */}
       {cv.sections.media && cv.sections.media.length > 0 && (
-        <div className="w-full bg-gradient-to-br from-gray-50/80 to-white py-12 sm:py-16 lg:py-20">
+        <div id="media" className="w-full bg-gradient-to-br from-gray-50/80 to-white py-12 sm:py-16 lg:py-20">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0 }}
