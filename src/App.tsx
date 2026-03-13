@@ -20,44 +20,43 @@ import {
   Users,
   Wrench,
   Newspaper,
+  Menu,
+  X,
 } from 'lucide-react';
 import { Card, CardHeader, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { motion } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useCV } from './contexts/CVContext';
 import { formatDate, processEmphasis, processMarkdownLinks } from './services/cvService';
 import { ProjectCard } from '@/components/ProjectCard';
-import { ProjectsModal } from '@/components/ProjectsModal';
 
 const App = () => {
   const { cv, loading, error } = useCV();
   const [scrolled, setScrolled] = useState(false);
-  const [isProjectsModalOpen, setIsProjectsModalOpen] = useState(false);
+  const [showAllProjects, setShowAllProjects] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const headerRef = useRef<HTMLDivElement>(null);
-  const [headerHeight, setHeaderHeight] = useState(280);
-  const expandedHeight = useRef(280);
+  const [headerHeight, setHeaderHeight] = useState(340);
+  const expandedHeight = useRef(340);
 
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 50;
       setScrolled(isScrolled);
+      setMobileMenuOpen(false);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Dynamically measure header height so the spacer always matches
-  useEffect(() => {
+  // Dynamically measure header height so the spacer always matches.
+  // useLayoutEffect + synchronous measurement ensures the correct height
+  // is set before the browser paints, avoiding a spacing flash on load.
+  useLayoutEffect(() => {
     const el = headerRef.current;
     if (!el) return;
-
-    if (!scrolled) {
-      // When expanding back, immediately use the last-known expanded height
-      // so the spacer doesn't briefly stay small and cut off content
-      setHeaderHeight(expandedHeight.current);
-    }
 
     const measure = () => {
       const h = el.getBoundingClientRect().height;
@@ -65,15 +64,15 @@ const App = () => {
       if (!scrolled) expandedHeight.current = h;
     };
 
-    // Delay measurement slightly so conditional children have mounted
-    const frame = requestAnimationFrame(measure);
+    // Measure synchronously so the spacer is correct before first paint
+    measure();
+
     const observer = new ResizeObserver(measure);
     observer.observe(el);
     return () => {
-      cancelAnimationFrame(frame);
       observer.disconnect();
     };
-  }, [scrolled]);
+  }, [scrolled, loading]);
 
 
   if (loading) {
@@ -134,8 +133,10 @@ const App = () => {
 
   const skills = cv.sections['Core Competencies'];
 
-  // Get featured projects (first 4)
-  const featuredProjects = cv.sections['Selected Projects'].slice(0, 4);
+  // Get featured projects (first 4) and remaining projects
+  const allProjects = cv.sections['Selected Projects'];
+  const featuredProjects = allProjects.slice(0, 4);
+  const remainingProjects = allProjects.slice(4);
 
   // Social links
   const links = [
@@ -164,6 +165,26 @@ const App = () => {
       description: 'Download my resume',
     },
   ];
+
+  const scrollToSection = (href: string) => {
+    const el = document.querySelector(href);
+    if (!el) return;
+
+    if (!scrolled) {
+      // Force the header to collapse first so the spacer shrinks,
+      // then compute the correct scroll position on the next frame.
+      window.scrollTo({ top: 51 });
+      requestAnimationFrame(() => {
+        const offset = headerRef.current?.getBoundingClientRect().height ?? 80;
+        const top = el.getBoundingClientRect().top + window.scrollY - offset - 16;
+        window.scrollTo({ top, behavior: 'smooth' });
+      });
+    } else {
+      const offset = headerRef.current?.getBoundingClientRect().height ?? 80;
+      const top = el.getBoundingClientRect().top + window.scrollY - offset - 16;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -219,26 +240,36 @@ const App = () => {
               )}
             </div>
             {scrolled && (
-              <nav className="hidden sm:flex items-center gap-1">
-                {[
-                  { label: 'Experience', href: '#experience' },
-                  { label: 'Projects', href: '#projects' },
-                  { label: 'Publications', href: '#publications' },
-                  { label: 'Connect', href: '#connect' },
-                ].map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                    className="px-3 py-1.5 text-sm text-gray-500 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors duration-200"
-                  >
-                    {link.label}
-                  </a>
-                ))}
-              </nav>
+              <div className="flex items-center gap-2">
+                <nav className="hidden sm:flex items-center gap-1">
+                  {[
+                    { label: 'Expertise', href: '#expertise' },
+                    { label: 'Experience', href: '#experience' },
+                    { label: 'Projects', href: '#projects' },
+                    { label: 'Publications', href: '#publications' },
+                    { label: 'Connect', href: '#connect' },
+                  ].map((link) => (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        scrollToSection(link.href);
+                      }}
+                      className="px-3 py-1.5 text-sm text-gray-500 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors duration-200"
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </nav>
+                <button
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                  className="sm:hidden p-2 text-gray-500 hover:text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors duration-200"
+                  aria-label="Toggle navigation menu"
+                >
+                  {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                </button>
+              </div>
             )}
           </div>
           {!scrolled && (
@@ -266,53 +297,110 @@ const App = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="flex items-center gap-4 mt-6 sm:mt-8"
+              className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mt-6 sm:mt-8"
             >
-              {cv.social_networks.map((sn) => {
-                const url = sn.network === 'GitHub'
-                  ? `https://github.com/${sn.username}`
-                  : `https://www.linkedin.com/in/${sn.username}`;
-                const Icon = sn.network === 'GitHub' ? Github : Linkedin;
-                return (
+              <div className="flex items-center gap-4">
+                {cv.social_networks.map((sn) => {
+                  const url = sn.network === 'GitHub'
+                    ? `https://github.com/${sn.username}`
+                    : `https://www.linkedin.com/in/${sn.username}`;
+                  const Icon = sn.network === 'GitHub' ? Github : Linkedin;
+                  return (
+                    <a
+                      key={sn.network}
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-slate-400 hover:text-white transition-colors duration-200"
+                      aria-label={sn.network}
+                    >
+                      <Icon className="h-5 w-5" />
+                    </a>
+                  );
+                })}
+                <a
+                  href={`mailto:${cv.email}`}
+                  className="text-slate-400 hover:text-white transition-colors duration-200"
+                  aria-label="Email"
+                >
+                  <Mail className="h-5 w-5" />
+                </a>
+                <a
+                  href="/Alexander_Berger_CV.pdf"
+                  className="text-slate-400 hover:text-white transition-colors duration-200"
+                  aria-label="Resume"
+                >
+                  <FileText className="h-5 w-5" />
+                </a>
+              </div>
+              <div className="hidden sm:block w-px h-5 bg-slate-600" />
+              <nav className="flex flex-wrap items-center gap-1">
+                {[
+                  { label: 'Expertise', href: '#expertise' },
+                  { label: 'Experience', href: '#experience' },
+                  { label: 'Projects', href: '#projects' },
+                  { label: 'Publications', href: '#publications' },
+                  { label: 'Connect', href: '#connect' },
+                ].map((link) => (
                   <a
-                    key={sn.network}
-                    href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-slate-400 hover:text-white transition-colors duration-200"
-                    aria-label={sn.network}
+                    key={link.href}
+                    href={link.href}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection(link.href);
+                    }}
+                    className="px-3 py-1.5 text-sm text-slate-400 hover:text-white hover:bg-white/10 rounded-md transition-colors duration-200"
                   >
-                    <Icon className="h-5 w-5" />
+                    {link.label}
                   </a>
-                );
-              })}
-              <a
-                href={`mailto:${cv.email}`}
-                className="text-slate-400 hover:text-white transition-colors duration-200"
-                aria-label="Email"
-              >
-                <Mail className="h-5 w-5" />
-              </a>
-              <a
-                href="/Alexander_Berger_CV.pdf"
-                className="text-slate-400 hover:text-white transition-colors duration-200"
-                aria-label="Resume"
-              >
-                <FileText className="h-5 w-5" />
-              </a>
+                ))}
+              </nav>
             </motion.div>
           )}
         </div>
+        {/* Mobile navigation dropdown */}
+        <AnimatePresence>
+          {scrolled && mobileMenuOpen && (
+            <motion.nav
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="sm:hidden overflow-hidden border-t border-gray-100 bg-white/95 backdrop-blur-sm"
+            >
+              {[
+                { label: 'Expertise', href: '#expertise' },
+                { label: 'Experience', href: '#experience' },
+                { label: 'Projects', href: '#projects' },
+                { label: 'Publications', href: '#publications' },
+                { label: 'Connect', href: '#connect' },
+              ].map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setMobileMenuOpen(false);
+                    scrollToSection(link.href);
+                  }}
+                  className="block px-6 py-3 text-sm text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 transition-colors duration-200 border-b border-gray-50 last:border-b-0"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </motion.nav>
+          )}
+        </AnimatePresence>
       </motion.div>
 
       {/* Spacer div to prevent content jump when header becomes fixed */}
       <div
         style={{ height: headerHeight }}
-        className="w-full transition-all duration-300"
+        className="w-full"
       />
 
       {/* Skills Section */}
-      <div className="w-full py-12 sm:py-16 lg:py-20">
+      <div id="expertise" className="w-full py-12 sm:py-16 lg:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0 }}
@@ -398,7 +486,7 @@ const App = () => {
                 className="relative pl-12 sm:pl-16 pb-10 last:pb-0"
               >
                 {/* Timeline node */}
-                <div className="absolute left-2 sm:left-4 top-2 w-4 h-4 sm:w-5 sm:h-5 rounded-full border-[3px] border-indigo-500 bg-white z-10 shadow-sm" />
+                <div className={`absolute left-2 sm:left-4 top-2 w-4 h-4 sm:w-5 sm:h-5 rounded-full border-[3px] border-indigo-500 z-10 shadow-sm ${exp.end_date === 'present' ? 'bg-indigo-300' : 'bg-white'}`} />
 
                 <Card className="border-gray-100 hover:border-indigo-100 hover:shadow-md transition-all duration-300 overflow-hidden border-l-2 border-l-indigo-400/60">
                   <CardContent className="p-4 sm:p-6">
@@ -535,15 +623,45 @@ const App = () => {
               </motion.div>
             ))}
           </motion.div>
-          <div className="mt-8 text-center">
-            <Button
-              variant="outline"
-              className="border-indigo-200 hover:border-indigo-300 hover:bg-indigo-50"
-              onClick={() => setIsProjectsModalOpen(true)}
-            >
-              View All Projects
-            </Button>
-          </div>
+          <AnimatePresence>
+            {showAllProjects && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.4, ease: 'easeInOut' }}
+                className="overflow-hidden"
+              >
+                <motion.div
+                  variants={containerVariants}
+                  initial="hidden"
+                  animate="visible"
+                  className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6"
+                >
+                  {remainingProjects.map((project, index) => (
+                    <motion.div
+                      key={index}
+                      variants={itemVariants}
+                      className="group"
+                    >
+                      <ProjectCard project={project} />
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+          {remainingProjects.length > 0 && (
+            <div className="mt-8 text-center">
+              <Button
+                variant="outline"
+                className="border-indigo-200 hover:border-indigo-300 hover:bg-indigo-50 gap-2"
+                onClick={() => setShowAllProjects(!showAllProjects)}
+              >
+                {showAllProjects ? 'Show Fewer Projects' : `View All ${allProjects.length} Projects`}
+              </Button>
+            </div>
+          )}
         </div>
       </div>
 
@@ -752,11 +870,6 @@ const App = () => {
         </div>
       </footer>
 
-      <ProjectsModal
-        isOpen={isProjectsModalOpen}
-        onClose={() => setIsProjectsModalOpen(false)}
-        projects={cv.sections['Selected Projects']}
-      />
     </div>
   );
 };

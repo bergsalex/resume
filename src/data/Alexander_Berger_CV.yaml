@@ -1,30 +1,60 @@
 cv:
-  name: Alexander Berger
+  name: Alexander Berger-Liedtka
+  location: Bar Harbor, ME
   email: bergs.alex@gmail.com
+  website: https://alxbrgr.com
   phone: tel:+1 (914) 393-7752
   social_networks:
     - network: LinkedIn
-      username: alexanderberger91
+      username: alexberger91
     - network: GitHub
       username: bergsalex
+
   sections:
     overview:
-      - Over a ***decade*** of experience in ***software engineering***, with expertise in ***API architecture*** and ***distributed systems*** using ***Python*** and ***TypeScript***.
-      - Passionate about building ***elegant*** software solutions that ***meet and exceed user needs***.
-      - Experienced in collaborating with colleagues ***across disciplines and domains***.
-      - Experienced in ***designing, leading, and implementing*** complex ***distributed systems*** powering scientific and ***developer focused solutions***.
-      - Extensive experience in building solutions on ***cloud infrastructure***, with specific expertise in ***GCP***.
-    technologies:
-      - label: Languages
-        details: 'Python, SQL, TypeSript/JavaScript, Bash.'
-      - label: Technologies
-        details: Kubernetes, Docker, Terraform, Skaffold, Helm, Git, PostgreSQL / PgVector, CloudSQL
-      - label: Frameworks
-        details: FastAPI, Click/Typer, SQLAlchemy, Flask, Angular
-      - label: Services
-        details: GCP, Bitbucket, Github, Temporal.io, Jira, Confluence
-      - label: 'Experience with'
-        details: React, Pytorch, Tensorflow, R, C/C++, Rust, Java, Cloud Run, Prometheus/Grafana, Redis
+      - "Accomplished software engineer with a proven track record for solving complex computing needs in high-performance, demand-driven scientific research environments."
+      - "Over a decade of experience building distributed systems and ML-enabled platforms, from research prototype to production-grade products."
+      - "Scaled reliable pipelines for real-world video data on HPC (Nextflow/Slurm), and shipped PyTorch models into operational workflows with MLflow-tracked experimentation."
+      - "Operated at scale across video datasets totaling hundreds of thousands of hours, improving throughput and reliability by eliminating key failure modes and manual steps."
+      - "Strong technical leadership across architecture, execution, and engineering standards; modernizing legacy systems, improving reliability, and accelerating delivery."
+      - "History of shaping technical strategy, leading cross-functional initiatives, and scaling resilient systems in fast-paced, research-driven environments."
+      - "Comfortable owning problems end-to-end, from model experimentation and training pipelines through deployment, operations, and long-term maintainability."
+      - "Passionate about operational excellence, elegant and resilient system architecture, and empowering engineering teams through technical leadership and mentorship."
+
+    "Core Competencies":
+      - label: ML Systems & Experimentation
+        details: "PyTorch, MLflow, evaluation metrics, model-to-pipeline integration, training optimization, data/compute optimization"
+      - label: Workflow Orchestration & HPC
+        details: "Nextflow, Slurm, resource profiles, retries/escalation, data staging, high-throughput batch processing, A100/A100-MIG/V100"
+      - label: Reliability & Operations
+        details: "Failure-mode analysis, OOM mitigation, guardrails to reduce user error, unattended execution, incident-driven improvements"
+      - label: Distributed Systems & APIs
+        details: "FastAPI, SQLAlchemy, Pydantic, Postgres/PgVector, Redis, async job orchestration patterns, durable orchestration (Temporal)"
+      - label: Cloud & Infrastructure
+        details: "Kubernetes (GKE), GCP, Docker, Terraform, Helm, Skaffold, Cloud Run, CI/CD (GitHub Actions, Bitbucket Pipelines), observability (Prometheus/Grafana), Infrastructure as Code (IaC)"
+      - label: Software Engineering
+        details: "API Design and Implementation, Trunk-Based Development, Test-Driven Development, CI/CD Pipeline Automation, Debugging and Root Cause Analysis, Agile/Scrum/DevOps"
+      - label: System Architecture
+        details: "Cloud-Native Architecture, Distributed Systems, Event-Driven Architecture, Service-Oriented Architecture (SOA), Resilient System Design, Modernization and Migration Strategy, Architectural Governance, Arc42 Documentation"
+      - label: Leadership & Strategy
+        details: "Technical strategy, cross-functional execution, mentorship, governance/standards, architectural reviews, stakeholder alignment, requirements gathering, team development"
+      - label: Languages & Frameworks
+        details: "Python, TypeScript, JavaScript, SQL, Bash, R, C/C++, Rust, Java"
+      - label: Additional Technologies
+        details: "React, Angular, Typer/Click, TensorFlow, JWTs, OAuth, Auth0/Okta, Confluence, Jira, Git, MkDocs"
+
+    "Technical Leadership Highlights":
+      - "Operationalized a mouse-behavior video ML workflow on HPC (Nextflow+Slurm), achieving reliable production execution where prior attempts had stalled, cutting processing from weeks to <24 hours and enabling largely unattended runs."
+      - "Shipped PyTorch models into production workflows (MLflow-tracked), including a key training reduction from ~7 days to ~18 hours and removal of a recurring manual step."
+      - "Scaled mixed CPU/GPU execution (A100 MIG slicing with V100 fallback), supporting ~100 concurrent GPU jobs and thousands of CPU jobs with improved stability under OOM and user-error failure modes."
+      - "Modernized mission-critical genomics services from monoliths to Kubernetes microservices on GCP, increasing deployment frequency by 13x (from 12 to 166 releases per year) and improving platform resilience."
+      - "Consolidated fragmented repositories into a unified monorepo, improving deployment frequency, test coverage, and cross-team collaboration while reducing duplication."
+      - "Architected and led delivery of a production-ready ML-driven analytics platform, aligning engineering with novel genomic research and accelerating user engagement under tight delivery timelines."
+      - "Led a confidential software engineering transformation initiative, conducting organizational diagnostics, defining a 40-page modernization strategy, and delivering embedded technical mentorship to level up a research-focused development team."
+      - "Established and enforced API governance standards adopted across 10+ applications, improving developer onboarding, increasing productivity, and ensuring architectural consistency at scale."
+      - "Scaled engineering culture by designing and leading hands-on training programs, promoting best practices in coding, testing, and collaboration across research software teams."
+      - "Designed enterprise Kubernetes architecture and standardized container orchestration practices, decreasing infrastructure costs by ~20%."
+
     experience:
       - company: The Jackson Laboratory
         position: Senior Scientific Software Engineer
@@ -32,123 +62,233 @@ cv:
         start_date: 2022-08
         end_date: present
         highlights:
-          - Design and drive high-complexity projects, independently and in a team environment.
-          - Mentor & lead a team of engineers and independently lead collaborations.
-          - Independently drive collaborations and requirements gathering discussions.
-          - Identify publishable applications and lead or co-lead the respective publications.
-          - Design and implement team processes and procedures to improve operational effectiveness and efficiency.
-          - Participate in application architecture and design reviews. 
-          - All responsibilities of previous roles.
+          - "**The Kumar Lab Role** (May 2025 – present)"
+          - "Improved a secondary pipeline from a theoretical ~2 days to ~8 hours end-to-end."
+          - "Designed, trained, and productionized PyTorch keypoint models (arena corners; lixit/drinker), integrated into the pipeline with MLflow-tracked experimentation."
+          - "Operationalized a dedicated workflow to re-encode and compress ~2.1 PB of legacy raw video into a ~55 GB long-term retention format, balancing quality and storage cost and enabling future processing and re-analysis."
+          - ""
+          - "**Software & Platforms Architecture Role** (Nov 2025 – present)"
+          - "Designed and drove architecture discussions for integrated data science infrastructure, aligning stakeholders on requirements, approach, and sequencing."
+          - "Reduced organizational software surface area by consolidating fragmented repos into a unified monorepo; improved deployment frequency, test coverage, and collaboration while reducing duplication."
+          - "Negotiated with system leads to refine architectural requirements and approach."
+          - ""
+          - "**Platform Modernization & Technical Strategy**"
+          - "Defined and executed technical strategy for cloud-native platform modernization, leading the migration from monolithic architectures to scalable, distributed systems deployed on GKE."
+          - "Led design and deployment of event-driven and service-oriented architectures, enabling 13x increase in system release cadence."
+          - "Integrated Kubernetes-native scalable abstractions, Terraform-managed infrastructure, and composable API frameworks to accelerate product delivery."
+          - ""
+          - "**Leadership & Mentorship**"
+          - "Mentored engineers and drove API/cloud-native standards and design reviews to improve developer velocity and system reliability."
+          - "Directed technical design reviews and governance processes to align architectural decisions with strategic priorities."
+          - "Chaired technical design review sessions to evaluate proposed solutions against architectural principles before implementation."
+          - "Created and maintained a technical knowledge base to foster collaboration and knowledge sharing across teams."
+          - "Formalized team processes, improving execution consistency across projects."
+          - "Expanded technical leadership responsibilities across platforms, shaping departmental technical initiatives."
+          - ""
+          - "**Strategic Delivery**"
+          - "Delivered strategic research applications that strengthened institutional infrastructure and visibility."
+          - "Led the production deployment of an ML-driven analytics platform, aligning novel research with production-grade infrastructure."
+
       - company: The Jackson Laboratory
         position: Scientific Software Engineer
         location: Bar Harbor, ME
         start_date: 2018-09
         end_date: 2022-08
         highlights:
-          - Design and drive low and medium complexity projects, independently and in a team environment.
-          - Participate in collaborations and requirements gathering discussions.
-          - Stay current with bioinformatics and genomics literature and associated technologies.
-          - All responsibilities of previous roles.
+          - "Led technical implementation of research software systems, integrating evolving genomics and bioinformatics requirements into scalable, reusable components."
+          - "Collaborated with domain experts to define product requirements, accelerating time-to-insight and research translation."
+          - "Delivered foundational tools and services for data analysis, supporting platform consistency across research applications."
+          - "Introduced best practices for versioning, testing, and developer workflows, improving system reliability and reducing downstream support overhead."
+          - "Assumed increasing technical ownership of critical projects, shaping design direction and leading implementation efforts."
+          - "Architected reusable backend services for genomics research platforms, emphasizing scalability, maintainability, and composability."
+          - "Led service extraction initiatives to modularize monolithic applications into cloud-first, Kubernetes-managed deployments."
+          - "Built an API utility library implementing RESTful standards that became the foundation for API standardization across the department."
+          - "Developed a storage abstraction library with pluggable architecture supporting various backend systems."
+          - "Established API governance standards, service reliability practices, and CI/CD pipelines across critical research platforms."
+          - "Led architectural decision-making processes, balancing technical needs with business constraints."
+
       - company: The Jackson Laboratory
         position: Associate Scientific Software Engineer
         location: Bar Harbor, ME
         start_date: 2016-01
         end_date: 2018-09
         highlights:
-          - Participate and contribute to software development projects.
-          - Participate in code reviews and design discussions.
-          - Contribute to internal documentation, courses and workshops.
-          - Contribute to publications.
-      - position: ''
-        company: Additional Experience Provided Below
-    'Core Skills':
-      - label: Software Engineering
-        details: 'Systems/API Architecture & Design, Cloud Infrastructure, Debugging & Root Cause Analysis'
-      - label: Technical Leadership
-        details: 'Team Leadership, Technical Communication, Product Development, Mentorship, Collaboration, Conflict Resolution, Stakeholder Management'
-    education:
-      - institution: The Roux Institute at Northeastern University
-        area: Computer Science
-        degree: MS
-        start_date: 2020-09
-        end_date: 2023-08
+          - "Delivered production components for scientific workflows and data products."
+          - "Contributed to design reviews, performance improvements, code quality initiatives, and documentation."
+          - "Authored internal documentation and supported knowledge transfer through courses, workshops, and publications."
+          - "Served as technical liaison between development teams and stakeholders to ensure alignment."
+          - "Participated in platform optimization initiatives, performance tuning, and core service scalability enhancements."
+
+      - company: The Jackson Laboratory
+        position: Software Engineering Intern
+        location: Bar Harbor, ME
+        start_date: 2014-06
+        end_date: 2016-01
         highlights:
-          - 'GPA: 3.8/4.0'
-          - '**Selected Coursework:** Algorithms, Software Engineering, Pattern Recognition & Computer Vision, Database Management, Programming Design Paradigms, Machine Learning w/ Small Data, Data Visualization'
-      - institution: New York City College of Technology
-        area: Applied Mathematics
-        degree: BS
-        start_date: 2014-09
-        end_date: 2016-12
+          - "Software engineering and development projects."
+          - "Software quality assurance tasks and projects."
+
+      - company: Hudson Valley Digital
+        position: Programming Associate
+        location: New York, NY
+        start_date: 2014-02
+        end_date: 2014-06
         highlights:
-          - 'GPA: 3.9/4.0'
-          - '**Selected Coursework:** Computational Statistics, Stochastic Processes, Numerical Methods, Calculus, Ordinary and Partial Differential Equations, Probability & Statistics, Linear Algebra, Mathematical Modeling, Data Structures & Algorithms'
-    projects:
+          - "Planning, design, and implementation work for contract-based software engineering projects."
+
+      - company: Amkai LLC
+        position: Software Engineering Intern
+        location: New York, NY
+        start_date: 2013-06
+        end_date: 2013-09
+        highlights:
+          - "Designed and implemented test plans and scripts for black box testing."
+          - "Created software documentation and deployed a documentation wiki."
+
+    "Selected Projects":
+      - name: Behavioral Video ML Pipeline
+        highlights:
+          - '**Impact:** Achieved reliable production execution where prior attempts had stalled, cutting processing from weeks to less than 24 hours and enabling largely unattended runs.'
+          - '**Tools Used:** Python, PyTorch, MLFlow, Nextflow, Slurm, Hydra'
+          - "Production ML pipeline for mouse-behavior video data (1-hour videos, 30 FPS, 800x800) executed on Slurm/HPC with Nextflow and mixed CPU/GPU stages."
+          - "Improved keypoint inference characteristics (e.g., lixit/drinker model: PCK@0.01 = 0.9974; ~545 ms/frame CPU inference), increasing robustness of downstream pipeline stages."
+          - "Optimized key algorithmic components  to trade memory efficiency for time efficiency."
+
       - name: Genomic Data Repository and Analysis Platform
-        date: '[GeneWeaver GitHub](https://github.com/orgs/TheJacksonLaboratory/repositories?q=geneweaver)'
         highlights:
           - '**Impact:** Designed and implemented a transition path for the application from a monolithic architecture to a distributed architecture, and from on-premises infrastructure to cloud infrastructure. Leading to increased usage, scalability, engagement, and operational efficiency.'
           - '**Tools Used:** Python, FastAPI, CloudSQL - PostgreSQL, Temporal, Bash, Docker, GKE - Kubernetes'
-          - Increased delivery from approximately twelve releases per year, to over 166 releases per year.
-          - Interviewed a diverse set of stakeholders to understand the current and future needs of the system, and to identify a workable development pathway.
-          - Lead a team of three engineers to implement the changes and deliver requirements on-time.
-          - Regularly meets with stakeholders, including the PI, data scientists, data curators, and collaborators to provide status updates and to gather feedback.
-      - name: Semantic & Association Search Service
+          - "Increased deployment cadence from 12 to 166 releases per year (13x), accelerating research timelines and strengthening system reliability."
+          - "Led cross-functional engineering teams through phased migration planning and established architectural governance models ensuring successful rollout."
+          - "Developed a phased migration strategy and architectural governance model to ensure consistent implementation."
+
+      - name: Confidential ML-Driven Genomic Analytics Tool
+        highlights:
+          - "**Impact:** Led the production deployment of a novel ML-powered genomics application, integrating cutting-edge research into a scalable, production-ready system."
+          - "**Tools Used:** Python, FastAPI, Kubernetes, PostgreSQL, GCP, Temporal, R."
+          - "Enabled user engagement and early adoption by delivering a robust, extensible proof-of-concept tool, positioned for growth and stakeholder visibility."
+          - "Architected the platform and led a cross-functional engineering team through accelerated delivery under tight timelines."
+          - "Acted as technical liaison between research and engineering teams, translating experimental analytics into stable, scalable application components."
+          - "Prioritized usability, scalability, and performance to support future expansion, user acquisition, and sustained research adoption."
+
+      - name: Confidential Research Software Modernization Initiative
+        highlights:
+          - "**Impact:** Led a comprehensive effort to modernize software engineering practices for a high-impact internal research group, aligning development strategy with research velocity and long-term maintainability."
+          - "**Tools Used:** Python, Git, PyTorch, TensorFlow, R, HPC"
+          - "Conducted a full diagnostic of team dynamics, workflows, and technical bottlenecks, resulting in a 40-page actionable software management plan endorsed by the group lead."
+          - "Embedded into key projects to model best practices while contributing to advanced machine learning and computer vision research."
+          - "Designed and delivered hands-on training programs to rapidly upskill researchers and developers, increasing code quality and cross-team collaboration."
+          - "Acted as a technical advisor and strategic partner, helping align scientific innovation with scalable, sustainable engineering practices."
+
+      - name: Semantic and Association Search Platform
         highlights:
           - '**Impact:** Developed a semantic and association search service for scientific data resources. Implemented hybrid vector/graph datamodel to support the semantic search service.'
           - '**Tools Used:** Python, FastAPI, Temporal.io, CloudSQL - PostgreSQL with Pgvector, GKE - Kubernetes'
-          - Collaborated across domains to design and implement a semantic and association search service for scientific data resources.
-          - Implemented hybrid vector/graph datamodel to support the semantic search service.
-          - Utilizes open source LLMs to create document embeddings and to support the semantic search capabilities.
+          - "Designed and deployed a semantic search system integrating hybrid graph/vector models and LLM-based document embeddings to provide AI functionalities as an API."
+          - "Enabled flexible semantic exploration of scientific data with scalable architecture."
+          - "Led cross-domain collaboration to align system capabilities with evolving research needs."
+          - "Technologies: Python, FastAPI, PostgreSQL (PgVector), Kubernetes, Temporal.io."
+
       - name: Analysis Job API
         highlights:
-          - '**Impact:** Developed an API to support the development of durable, user-centric analysis jobs for data resources and informatics platforms. Simplified the development and usage of analysis jobs by providing a standardized interface and a flexible execution model.'
-          - '**Tools Used:** Python, FastAPI, Temporal.io, CloudSQL - PostgreSQL, GKE - Kubernetes'
-          - Performed extensive stakeholder engagement to ensure the API meets the current and future needs of the users.
-          - Selected as the core pathfinder use-case for departmental UI Component Library, to be used across all data resources and informatics platforms.
-      - name: Kubernetes & Cloud Infrastructure
+          - "**Impact:** Designed, implemented, and deployed a flexible API supporting durable, user-driven analysis workflows across platforms."
+          - "**Tools Used:** Python, FastAPI, Temporal.io, CloudSQL PostgreSQL, GKE"
+          - "Led multi-stakeholder requirements gathering to shape future-proof API designs."
+          - "Pathfinder for department-wide UI Component Library adoption and development standardization."
+
+      - name: Data Storage & Retrieval API
         highlights:
-          - "**Impact:** Designed and implemented a Kubernetes cloud infrastructure to support The Jackson Laboratory's computational sciences and data resources and informatics platforms. Decreased cloud infrastructure costs, improved operational efficiency, and increased scalability and reliability of the infrastructure."
-          - '**Tools Used:** Terraform, Helm, Git, GitHub, Bitbucket, Google Cloud Platform'
-          - Infrastructure is comprised of more than 350vCPUs and 1.5TB of RAM, and runs an average of 220 workloads powering more than 140 services.
-          - Implemented processes and procedures to automate and standardize the rollout of infrastructure changes.
-          - Contribtued to incident response and post-mortem investigations.
+          - "**Impact**: Designed, implemented, and deployed a flexible API providing a standard way to store and retrieve a datasets."
+          - "**Tools Used:** Rust, Ga4GH - DRS, Google Cloud Storage, CloudSQL PostgreSQL, GKE"
+          - "Led multi-stakeholder requirements gathering to shape future-proof API designs."
+          - "Provides core complex functionality to enable proper decoupling in key department wide integration points."
+
+      - name: Enterprise Cloud Infrastructure Strategy
+        highlights:
+          - "**Impact:** Led enterprise Kubernetes (GKE) architecture design, standardizing container orchestration and scaling research infrastructure."
+          - "**Tools Used:** Kubernetes (GKE), Terraform, Skaffold, Helm, GCP, Prometheus, Grafana"
+          - "Decreased infrastructure costs by ~20%, improved operational efficiency through standardization, and enhanced scalability."
+          - "Established Infrastructure as Code practices and CI/CD pipeline automation."
+          - "Implemented automated deployment pipelines and monitoring solutions to improve operational visibility."
+
+      - name: API Standards and Governance
+        highlights:
+          - "**Impact:** Led comprehensive architectural standardization initiative combining API governance and knowledge management to establish technical excellence across the department."
+          - "Established a Technical Knowledge Base Community of Practice that fostered architectural excellence and collaborative problem-solving through regular knowledge sharing."
+          - "Developed an API utility library implementing RESTful standards and created a central MkDocs-based technical knowledgebase that became the definitive resource for architectural patterns."
+          - "Implemented a consensus-building approach to standardization that secured stakeholder buy-in and ensured architectural decisions aligned with business objectives."
+
       - name: API Utility Library
         highlights:
           - '**Impact:** Developed a utility library to ease the development of standards compliant RESTful APIs. Implemented core ReSTful API Standards and best practices utilities to make it easy for new and existing APIs to be compliant.'
           - '**Tools Used:** Python'
           - Currently in use across multiple python applications, including new and legacy APIs.
           - The foundation element for API standardization in the departmental UI Component Library initiative.
+
       - name: Storage Abstraction Library
         highlights:
           - '**Impact:** Developed a storage abstraction library to support the development of data resources and informatics platforms in a consistent manner. Implemented a flexible, pluggable architecture to support various storage backends. Used as an abstraction for cloud native storage solutions, and as a migration path for legacy storage solutions.'
           - '**Tools Used:** Python'
           - Currently in use by all Python based data resources and informatics platforms in the department.
           - In active use and development for over four years.
+
       - name: Technical Knowledge Base
         highlights:
           - '**Impact:** Implemented a technical knowledgebase that supports and encourages knowledge sharing and collaboration across teams and domains.'
           - '**Tools Used:** Python, MkDocs'
+
+    education:
+      - institution: Northeastern University, The Roux Institute
+        area: Computer Science
+        degree: MS
+        start_date: 2020-09
+        end_date: 2023-08
+        highlights:
+          - "**Selected Coursework:** Algorithms, Software Engineering, Pattern Recognition & Computer Vision, Database Management, Programming Design Paradigms, Machine Learning w/ Small Data, Data Visualization"
+      - institution: New York City College of Technology
+        area: Applied Mathematics
+        degree: BS
+        start_date: 2014-09
+        end_date: 2016-12
+        highlights:
+          - "**Selected Coursework:** Computational Statistics, Stochastic Processes, Numerical Methods, Calculus, Ordinary and Partial Differential Equations, Probability & Statistics, Linear Algebra, Mathematical Modeling, Data Structures & Algorithms"
+
     publications:
-      - title: 'AON: a service to augment Alliance Genome Resource data with additional species.'
+      - title: "AON: a service to augment Alliance Genome Resource data with additional species."
         authors:
           - Sophie K Kearney
-          - '***Alexander Berger***'
+          - "***Alexander Berger***"
           - Erich Baker
         doi: 10.1186/s13104-023-06577-8
         date: 2023-10
-      - title: 'Mouse phenome database: curated data repository with interactive multi-population and multi-trait analyses.'
+      - title: "Mouse phenome database: curated data repository with interactive multi-population and multi-trait analyses."
         authors:
           - Molly A. Bogue
           - Robyn L Ball
           - David O Walton
           - Matthew H Dunn
           - Georgi Kolishovski
-          - '***Alexander Berger***'
-          - et al.
+          - "***Alexander Berger***"
+          - Anna Lamoureux
+          - Stephen C. Grubb
+          - Matthew Gerring
+          - Matthew Kim
+          - Hongping Liang
+          - Jake Emerson
+          - Timothy M Stearns
+          - Hao He
+          - Gaurab Mukherjee
+          - John Bluis
+          - Sara Davis
+          - Sejal Desai
+          - Beth A. Sundberg
+          - Beena Kadakkuzha
+          - Govindarajan Kunde-Ramamoorthy
+          - Vivek M. Philip
+          - Elissa J Chesler
         doi: 10.1007/s00335-023-10014-3
         date: 2023-12
-      - title: 'GenomeMUSter mouse genetic variation service enables multitrait, multipopulation data integration and analysis.'
+      - title: "GenomeMUSter mouse genetic variation service enables multitrait, multipopulation data integration and analysis."
         authors:
           - Robyn L Ball
           - Molly A. Bogue
@@ -161,44 +301,51 @@ cv:
           - Matthew J Kim
           - Hao He
           - Jake Emerson
-          - '***Alexander Berger***'
-          - et al.
+          - "***Alexander Berger***"
+          - David O Walton
+          - Keith Sheppard
+          - Baha El Kassaby
+          - Francisco Castellanos
+          - Govindarajan Kunde-Ramamoorthy
+          - Lu Lu
+          - John Bluis
+          - Sejal Desai
+          - Beth A. Sundberg
+          - Gary Peltz
+          - Zhuoqing Fang
+          - Gary Churchill
+          - Robert W Williams
+          - Arpana Agrawal
+          - Carol J Bult
+          - Vivek M. Philip
+          - Elissa J Chesler
         doi: 10.1101/gr.278157.123
         date: 2024-02
-      - title: 'Curating gene sets: challenges and opportunities for integrative analysis.'
+      - title: "Curating gene sets: challenges and opportunities for integrative analysis."
         authors:
           - Jason A. Bubier
           - David P. Hill
           - Gaurab Mukherjee
           - Timothy Reynolds
           - Erich J Baker
-          - '***Alexander Berger***'
-          - et al.
+          - "***Alexander Berger***"
+          - Jake Emerson
+          - Judith A. Blake
+          - Elissa J Chesler
         doi: 10.1093/database/baz036
         date: 2019-01
-    'Additional Experience':
-      - company: The Jackson Laboratory
-        position: Software Engineering Intern
-        location: Bar Harbor, ME
-        start_date: 2014-06
-        end_date: 2016-01
-        highlights:
-          - Software engineering and development projects.
-          - Software quality assurance tasks and projects.
-      - company: Hudson Valley Digital 
-        position: Programming Associate
-        location: New York, NY
-        start_date: 2014-02
-        end_date: 2014-06
-        highlights:
-          - Planing, design, and implementation work for contract-based software engineering projects.
-      - company: Amkai LLC
-        position: Software Engineering Intern
-        location: New York, NY
-        start_date: 2013-06
-        end_date: 2013-09
-        highlights:
-          - Designed and implemented test plans and scripts for black box testing.
-          - Created software documentation and deployed a documentation wiki.
-  design:
-    theme: engineeringresumes 
+    #      - title: "Full Publication List"
+    #        authors:
+    #          - "https://scholar.google.com/citations?user=R1EpLLgAAAAJ&hl=en"
+
+    media:
+      - title: "Jackson Laboratory software engineer levels up his career at the Roux Institute"
+        publisher: "Northeastern University Roux Institute"
+        authors:
+          - "The Roux Institute"
+        date: "2023-05"
+        url: "https://roux.northeastern.edu/story/jackson-laboratory-software-engineer-levels-up-his-career-at-the-roux-institute/"
+        description: "Profile article about educational journey at the Roux Institute and career impact at The Jackson Laboratory."
+
+design:
+  theme: engineeringresumes
