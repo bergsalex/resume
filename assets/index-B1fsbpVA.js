@@ -334,14 +334,14 @@ ${n.comment}`:n.comment}this.doc.range[2]=n.offset;break}default:this.errors.pus
       - label: System Architecture
         details: "Cloud-Native Architecture, Distributed Systems, Event-Driven Architecture, Service-Oriented Architecture (SOA), Resilient System Design, Modernization and Migration Strategy, Architectural Governance, Arc42 Documentation"
       - label: Leadership & Strategy
-        details: "Technical strategy, cross-functional execution, mentorship, governance/standards, architectural reviews, stakeholder alignment, requirements gathering, team development"
+        details: "Technical strategy, technical leadership, product management, cross-functional execution, mentorship, governance/standards, architectural reviews and stakeholder alignment"
       - label: Languages & Frameworks
         details: "Python, TypeScript, JavaScript, SQL, Bash, R, C/C++, Rust, Java"
       - label: Additional Technologies
         details: "React, Angular, Typer/Click, TensorFlow, JWTs, OAuth, Auth0/Okta, Confluence, Jira, Git, MkDocs"
 
     "Technical Leadership Highlights":
-      - "Operationalized a mouse-behavior video ML workflow on HPC (Nextflow+Slurm), achieving reliable production execution where prior attempts had stalled, cutting processing from weeks to <24 hours and enabling largely unattended runs."
+      - "Operationalized a mouse-behavior video ML workflow on HPC (Nextflow+Slurm), achieving reliable production execution where prior attempts had stalled, cutting processing from weeks to less than 24 hours and enabling largely unattended runs."
       - "Shipped PyTorch models into production workflows (MLflow-tracked), including a key training reduction from ~7 days to ~18 hours and removal of a recurring manual step."
       - "Scaled mixed CPU/GPU execution (A100 MIG slicing with V100 fallback), supporting ~100 concurrent GPU jobs and thousands of CPU jobs with improved stability under OOM and user-error failure modes."
       - "Modernized mission-critical genomics services from monoliths to Kubernetes microservices on GCP, increasing deployment frequency by 13x (from 12 to 166 releases per year) and improving platform resilience."
@@ -449,7 +449,15 @@ ${n.comment}`:n.comment}this.doc.range[2]=n.offset;break}default:this.errors.pus
           - '**Tools Used:** Python, PyTorch, MLFlow, Nextflow, Slurm, Hydra'
           - "Production ML pipeline for mouse-behavior video data (1-hour videos, 30 FPS, 800x800) executed on Slurm/HPC with Nextflow and mixed CPU/GPU stages."
           - "Improved keypoint inference characteristics (e.g., lixit/drinker model: PCK@0.01 = 0.9974; ~545 ms/frame CPU inference), increasing robustness of downstream pipeline stages."
-          - "Optimized key algorithmic components  to trade memory efficiency for time efficiency."
+          - "Replaced a failure-prone iterative algorithm with a vectorized approach, reducing end-to-end runtime from weeks to hours (~100x speedup)."
+
+      - name: Healthcare Agentic Graph-RAG Workflow
+        highlights:
+          - '**Impact:** Technical leadership and architecture design of a clinical healthcare system utilizing agentic workflows and graph rag.'
+          - '**Tools Used:** Python, MS Agent, FastAPI, Azure'
+          - 'Led technical planning and delivery: translated grant requirements into an MVP roadmap, sequenced implementation priorities, and owned end-to-end software delivery.'
+          - 'Managed engineering effort allocation across the project, identified scope-effort gaps, and matched engineers to work based on technical strengths.'
+          - 'Drove architecture and design decisions in alignment with group standards, escalating deviations through formal architecture review when needed.'
 
       - name: Genomic Data Repository and Analysis Platform
         highlights:
@@ -484,7 +492,6 @@ ${n.comment}`:n.comment}this.doc.range[2]=n.offset;break}default:this.errors.pus
           - "Designed and deployed a semantic search system integrating hybrid graph/vector models and LLM-based document embeddings to provide AI functionalities as an API."
           - "Enabled flexible semantic exploration of scientific data with scalable architecture."
           - "Led cross-domain collaboration to align system capabilities with evolving research needs."
-          - "Technologies: Python, FastAPI, PostgreSQL (PgVector), Kubernetes, Temporal.io."
 
       - name: Analysis Job API
         highlights:
