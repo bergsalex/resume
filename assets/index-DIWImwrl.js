@@ -322,7 +322,7 @@ ${n.comment}`:n.comment}this.doc.range[2]=n.offset;break}default:this.errors.pus
       - label: ML Systems & Experimentation
         details: "PyTorch, MLflow, evaluation metrics, model-to-pipeline integration, training optimization, data/compute optimization"
       - label: Workflow Orchestration & HPC
-        details: "Nextflow, Slurm, resource profiles, retries/escalation, data staging, high-throughput batch processing, A100/A100-MIG/V100"
+        details: "Nextflow, Slurm, Bash, resource profiles, retries/escalation, data staging, high-throughput batch processing, A100/A100-MIG/V100"
       - label: Reliability & Operations
         details: "Failure-mode analysis, OOM mitigation, guardrails to reduce user error, unattended execution, incident-driven improvements"
       - label: Distributed Systems & APIs
@@ -343,7 +343,6 @@ ${n.comment}`:n.comment}this.doc.range[2]=n.offset;break}default:this.errors.pus
     "Technical Leadership Highlights":
       - "Operationalized a mouse-behavior video ML workflow on HPC (Nextflow+Slurm), achieving reliable production execution where prior attempts had stalled, cutting processing from weeks to less than 24 hours and enabling largely unattended runs."
       - "Shipped PyTorch models into production workflows (MLflow-tracked), including a key training reduction from ~7 days to ~18 hours and removal of a recurring manual step."
-      - "Scaled mixed CPU/GPU execution (A100 MIG slicing with V100 fallback), supporting ~100 concurrent GPU jobs and thousands of CPU jobs with improved stability under OOM and user-error failure modes."
       - "Modernized mission-critical genomics services from monoliths to Kubernetes microservices on GCP, increasing deployment frequency by 13x (from 12 to 166 releases per year) and improving platform resilience."
       - "Consolidated fragmented repositories into a unified monorepo, improving deployment frequency, test coverage, and cross-team collaboration while reducing duplication."
       - "Architected and led delivery of a production-ready ML-driven analytics platform, aligning engineering with novel genomic research and accelerating user engagement under tight delivery timelines."
@@ -351,6 +350,10 @@ ${n.comment}`:n.comment}this.doc.range[2]=n.offset;break}default:this.errors.pus
       - "Established and enforced API governance standards adopted across 10+ applications, improving developer onboarding, increasing productivity, and ensuring architectural consistency at scale."
       - "Scaled engineering culture by designing and leading hands-on training programs, promoting best practices in coding, testing, and collaboration across research software teams."
       - "Designed enterprise Kubernetes architecture and standardized container orchestration practices, decreasing infrastructure costs by ~20%."
+      - "Owned the technical direction for a laboratory mouse-behavior video ML pipeline on HPC (Nextflow+Slurm), driving it from stalled prior attempts to reliable production execution. Defined the execution architecture, resource strategy, and failure-handling approach that enabled largely unattended runs."
+      - "Led the end-to-end model integration strategy for the behavioral pipeline, making decisions on training infrastructure, model selection criteria, and the MLflow experimentation workflow that governed how models were evaluated and promoted to production."
+      - "Designed the evaluation framework and methodology used for systematic model comparison across video datasets, establishing the benchmarking standards the team uses to validate keypoint detection and inference performance."
+      - "Defined the technical approach for scalable video data pipelines processing hundreds of thousands of hours, including the architecture for format standardization, quality validation, and the large-scale re-encoding workflow for legacy data."
 
     experience:
       - company: The Jackson Laboratory
@@ -360,12 +363,16 @@ ${n.comment}`:n.comment}this.doc.range[2]=n.offset;break}default:this.errors.pus
         end_date: present
         highlights:
           - "**The Kumar Lab Role** (May 2025 – present)"
-          - "Improved a secondary pipeline from a theoretical ~2 days to ~8 hours end-to-end."
+          - "Improved a machine learning processing workflow from a theoretical ~2 days to ~8 hours end-to-end."
           - "Designed, trained, and productionized PyTorch keypoint models (arena corners; lixit/drinker), integrated into the pipeline with MLflow-tracked experimentation."
           - "Operationalized a dedicated workflow to re-encode and compress ~2.1 PB of legacy raw video into a ~55 GB long-term retention format, balancing quality and storage cost and enabling future processing and re-analysis."
+          - "Developed evaluation methodology and tooling for model comparison across video datasets, enabling systematic experimentation and reproducible results."
+          - "Built data infrastructure for managing and processing large-scale video corpora (hundreds of thousands of hours), including staging, validation, and format standardization."
+          - "Scaled mixed CPU/GPU execution (A100 MIG slicing with V100 fallback), supporting ~100 concurrent GPU jobs and thousands of CPU jobs with improved stability under OOM and user-error failure modes."
           - ""
           - "**Software & Platforms Architecture Role** (Nov 2025 – present)"
-          - "Designed and drove architecture discussions for integrated data science infrastructure, aligning stakeholders on requirements, approach, and sequencing."
+          - "Selected to lead systems architecture across the Software & Platforms department, defining technical direction for shared infrastructure spanning ML workflows, data processing, and cloud/HPC compute."
+          - "Designed integrated data science infrastructure connecting experiment tracking, model training, and large-scale data pipelines across heterogeneous compute environments."
           - "Reduced organizational software surface area by consolidating fragmented repos into a unified monorepo; improved deployment frequency, test coverage, and collaboration while reducing duplication."
           - "Negotiated with system leads to refine architectural requirements and approach."
           - ""
